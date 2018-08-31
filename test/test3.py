@@ -1,3 +1,11 @@
+
+number1 = 4
+number2 = 9
+number1,number2 = number2,number1
+#连接不像java，这里还要把类型转换成str类型才可以连接
+print("number1:"+str(number1))
+print(number2)
+
 score = int(input("请输入一个分数："))
 if 100 >= score >= 90:
     print('A')
@@ -35,3 +43,5 @@ print()
 
 for i in range(2,9):
     print(i)
+
+
