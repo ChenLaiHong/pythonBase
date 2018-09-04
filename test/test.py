@@ -21,3 +21,10 @@ print(-3 ** 2)
 print(3 ** -2)
 
 print(0xAF)
+
+# 56的二进制
+print(bin(56))
+# 56的八进制
+print(oct(56))
+# 56的16进制
+print(hex(56))
