@@ -6,8 +6,20 @@ while flag:
     numberOld = number
     result = number % 10
     number = number // 10
-    if (result**3) + (number % 10)**3 + (number // 10)**3 == numberOld:
+    if (result ** 3) + (number % 10) ** 3 + (number // 10) ** 3 == numberOld:
         print("此数为水仙花数")
         flag = False
     else:
         print("此数不是水仙花数")
+
+# 猜数字
+number2 = 53
+while True:
+    result = int(input("请输入你猜的数字："))
+    if result > number2:
+        print("你猜的数字大了，请重新猜！")
+    elif result < number2:
+        print("你猜的数字小了，请重新猜！")
+    else:
+        print("你猜的对了")
+        break
