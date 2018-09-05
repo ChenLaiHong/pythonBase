@@ -46,4 +46,13 @@ print(name.capitalize())
 # title()返回每个单词首字母大写后的新字符串，不会改变本身
 print(name.title())
 
-#
+#lower():将字符串每个字符变小写
+name1 = "Wo Xue Python"
+print(name1.lower())
+
+#upper():将所有字母变成大写
+print(name1.upper())
+
+
+# 字符串填充压缩操作
+
