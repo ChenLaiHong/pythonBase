@@ -142,7 +142,7 @@ random.shuffle(num6)
 print(num6)
 
 # 反转 reverse()
-print(num6.reverse(),num6)
+print(num6.reverse(), num6)
 
 
 
