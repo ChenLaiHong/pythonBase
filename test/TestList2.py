@@ -84,7 +84,7 @@ for item in num4:
 # for index in range(len(list)):
 #     print(index-1,list[index-1])
 for index in range(len(num4)):
-    print(index-1, num4[index-1])
+    print(index - 1, num4[index - 1])
 
 # 枚举类型
 values = ["a", "b", "c", "d", "e", "f"]
@@ -98,9 +98,9 @@ for tuplevalue in enumerate(values):
     idx, val = tuplevalue
     print(idx, val)
 
-
 # 判定是否为可迭代对象
 import collections
+
 print(isinstance(num4, collections.Iterable))
 
 # 列表的判定
@@ -109,13 +109,40 @@ print(isinstance(num4, collections.Iterable))
 print(1 in num4)
 print(5 not in num4)
 
-# 排序
+# 排序,没有改变本身
 # sorted(iterable,key=None,reverse=False)
 # iterable可迭代对象，key排序关键字，reverse控制升序降序，默认升序
 print(sorted(num4))
 print(sorted(num4, reverse=True))
+print(num4)
 
 # 根据元组里的第一个值进行排序
 s = [("zs", 18), ("zs1", 16), ("zs3", 14), ("zs2", 17), ("zs5", 19)]
 print(sorted(s))
+
+
+# 按照指定元素排序
+def getKey(x):
+    return x[1]
+
+
+print(sorted(s, key=getKey))
+
+# 改变本身，只能操作列表
+l = [1, 3, 6, 2, 4, 9, 7]
+res = l.sort()
+print(res, l)
+result = s.sort(key=getKey)
+print(result, s)
+
+import random
+# 乱序，导入random模块。random.shuffle(list),改变本身
+num6 = [1, 2, 3, 4, 5, 6]
+random.shuffle(num6)
+print(num6)
+
+# 反转 reverse()
+print(num6.reverse(),num6)
+
+
 
