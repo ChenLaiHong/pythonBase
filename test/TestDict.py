@@ -35,6 +35,59 @@ print(result2, person2)
 # del是直接所有删除
 person2.clear()
 print(person2)
+
 # 只改值不能改key
-# 根据key查找相应的值
+# 修改单个键值对，dic[key] = value,直接设置，如果key不存在，则新增，存在则修改
+person3 = {"name": "王五", "age": 20}
+print(person3)
+person3["age"] = 18
+print(person3)
+
+# 批量修改键值对,根据新的字典，批量更新旧字典中的键值对
+# 如果旧字典没有对应的Key,则新增键值对
+# oldDic.update(newDic)
+person3.update({"name": "王小五"})
+print(person3)
+
+# 根据key查找相应的值,key不存在会报错
 print(person["name"])
+
+# dic.get(key[default])如果不存在对应的key,则取给定的默认值default
+# 如果没有默认值，则为None，不会报错，但是原字典不会新增这个键值对
+print(person3.get("age"))
+print(person3.get("age1", 666))
+
+# dic.setdefault(key[,default])获取指定key对应的值
+# 如果key不存在，则设置成指定默认值，并返回该值
+# 如果默认值没给，则使用None代替
+print(person3.setdefault("age"))
+print(person3.setdefault("age1"), person3)
+
+# 获取所有的值
+print(person.values())
+# 获取所有的键
+print(person.keys())
+# 获取字典的键值对
+print(person.items())
+
+# 遍历所有的key，根据指定的key获取到对应的值
+d = {"name": "赵六", "age": 20, "address": "北京"}
+# 获取所有的key
+keys = d.keys()
+for key in keys:
+    print(d[key])
+
+# 直接遍历所有的键值对
+kvs = d.items()
+for k, v in kvs:
+    print(k, v)
+
+# 计算键值对个数
+print(len(d))
+
+# 判定
+# x in dic:判定dic中的key是否存在x
+# x not in dic:判定dic中的key是否不存在x
+print("age" in d)
+print("age" not in d)
+
