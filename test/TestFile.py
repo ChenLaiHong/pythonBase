@@ -62,7 +62,7 @@
 # f.read(len):len:读取文件内容的长度，默认是文件所有内容
 
 
-f = open("test.txt", "r", encoding="utf-8")
+# f = open("test.txt", "r", encoding="utf-8")
 # print(f.read(3))
 # # 将指针移动两位再读
 # f.seek(2)
@@ -78,4 +78,12 @@ f = open("test.txt", "r", encoding="utf-8")
 
 # f.readLines()会自动的将文件按换行符进行处理
 # 将处理的每一行组成一个列表返回
-print(f.readlines())
+# print(f.readlines())
+
+# for i in f:
+#     print(i, end="")
+
+
+import os
+os.rename("x.jpg", "xx.jpg")
+
