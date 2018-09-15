@@ -8,6 +8,3 @@ class Person:
 Person.jingtai()
 p = Person()
 p.jingtai()
-
-func = Person.jingtai
-func()
