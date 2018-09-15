@@ -31,3 +31,5 @@ p.jingtaifangfa()
 
 # 方法都是存放到类里面，存放到字典里
 print(Person.__dict__)
+
+
