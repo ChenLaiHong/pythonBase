@@ -6,7 +6,7 @@
 # 类内部、子类内部正常访问；模块内其他位置、跨模块访问会有警告
 
 # 两个下划线代表私有属性
-# 类内部可以访问，子类内部、模块内其他位置、跨模块都不能访问
+# 类内部可以访问，子类内部、模块内其他位置不能访问，跨模块看情况
 
 # 测试公有变量、受保护变量
 # class Animal:
@@ -59,26 +59,26 @@ __k = 555
 
 # 私有属性
 
-# class Animal:
-#     __x = 100
-#     # 类的内部访问
-#     def test(self):
-#         print(Animal.__x)
-#         print(self.__x)
-#     pass
-#
-# class Dog(Animal):
-#     # 测试能不能继承这个私有变量
-#     def test2(self):
-#         print(Dog.__x)
-#         print(self.__x)
-#     pass
-#
+class Animal:
+    __x = 100
+    # 类的内部访问
+    def test(self):
+        print(Animal.__x)
+        print(self.__x)
+    pass
+
+class Dog(Animal):
+    # 测试能不能继承这个私有变量
+    def test2(self):
+        print(Dog.__x)
+        print(self.__x)
+    pass
+
 # # 测试类的内部的方法
-# a = Animal()
+a = Animal()
 # a.test()
 
-# d = Dog()
+d = Dog()
 # d.test2()
 
 # 当前模块其他位置访问
@@ -86,3 +86,6 @@ __k = 555
 # print(Dog.__x)
 # print(Animal.__x)
 # print(Dog.__x)
+
+# 这样可以访问私有属性，但尽量不要这样访问
+print(Animal._Animal__x)
