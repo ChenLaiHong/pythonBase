@@ -61,15 +61,13 @@
 
 # f.read(len):len:读取文件内容的长度，默认是文件所有内容
 
-
-# f = open("test.txt", "r", encoding="utf-8")
-# print(f.read(3))
-# # 将指针移动两位再读
+f = open("test.txt", "r", encoding="utf-8")
+print(f.read(3))
+# 将指针移动两位再读
 # f.seek(2)
 # print(f.read(3))
-# # print(l)
-#
-# f.close()
+
+f.close()
 
 
 # f.readLine([limit]):读取一行数据
@@ -84,6 +82,5 @@
 #     print(i, end="")
 
 
-import os
-os.rename("x.jpg", "xx.jpg")
-
+# import os
+# os.rename("x.jpg", "xx.jpg")

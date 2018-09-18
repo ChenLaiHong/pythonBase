@@ -48,7 +48,7 @@ print(name.title())
 
 # lower():将字符串每个字符变小写
 name1 = "Wo Xue Python"
-print(name1.lower())
+print("变小写----"+name1.lower())
 
 # upper():将所有字母变成大写
 print(name1.upper())
