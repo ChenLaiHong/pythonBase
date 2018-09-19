@@ -13,6 +13,11 @@ Glad To Meet You.
 输入字符串，不要提供输入提示。下面是示例：
   s = input()
 输入的字符串存入变量s。"""
+# # capitalize()返回首字母大写后的新字符串，并不会改变字符串本身
+# print(name.capitalize())
+#
+# # title()返回每个单词首字母大写后的新字符串，不会改变本身
+# print(name.title())
 s = input()
 temp = 1
 for i in s:
