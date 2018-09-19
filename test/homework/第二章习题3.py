@@ -13,5 +13,15 @@ Glad To Meet You.
 输入字符串，不要提供输入提示。下面是示例：
   s = input()
 输入的字符串存入变量s。"""
-
 s = input()
+temp = 1
+for i in s:
+    if i == " ":
+        temp = 1
+        print(i, end="")
+    else:
+        if temp == 1:
+            print(i.upper(), end="")
+            temp = 0
+        else:
+            print(i, end="")
