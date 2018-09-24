@@ -5,7 +5,7 @@
 余弦定律规定，若三角形三条边(a, b, c)，边a和边b之间的夹角C满足：c2=a2+b2-2*a*b*cos(C)。
 因此，
 cos(C)=(c2-a2-b2) / (-2*a*b)
-C = arccos( (c2-a2-b2) / (-2*a*b) )
+C = acos( (c2-a2-b2) / (-2*a*b) )
 在Python语言中，函数acos的作用是根据cos值求出弧度。
 又，角度=弧度除以pi;再乘以180。
 【输入形式】
@@ -25,3 +25,15 @@ c:90.00
 【样例说明】
 输出的是角度，不是弧度。
 """
+import math
+a, b, c = input().split()
+a1 = float(a)
+b1 = float(b)
+c1 = float(c)
+if a1+b1 > c1 and a1+c1 > b1 and b1+c1 > a1:
+    print("a:" '%.2f' % ((math.acos((a1**2-b1**2-c1**2) / (-2*c1*b1)))/math.pi * 180))
+    print("b:" '%.2f' % ((math.acos((b1**2-a1**2-c1**2) / (-2*c1*a1)))/math.pi * 180))
+    print("c:" '%.2f' % ((math.acos((c1**2-b1**2-a1**2) / (-2*a1*b1)))/math.pi * 180))
+else:
+    print("Not Valid")
+
