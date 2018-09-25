@@ -6,7 +6,8 @@
 【样例输出】true
 【样例说明】输出true或者false，不是1或者0
 """
-c, str = input().split()
+c, str = input().split(" ")
+c1 = chr(c)
 if c in str:
     print("true")
 else:
