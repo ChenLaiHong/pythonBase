@@ -10,3 +10,8 @@
 【样例输出】
 1.09861
 """
+import math
+
+num = float(input())
+result = math.log(math.sqrt(abs(num)))
+print('%0.5f' % (result))
