@@ -112,7 +112,7 @@ print(5 not in num4)
 # 排序,没有改变本身
 # sorted(iterable,key=None,reverse=False)
 # iterable可迭代对象，key排序关键字，reverse控制升序降序，默认升序
-print(sorted(num4))
+print(sorted(num4),"]]]]]]")
 print(sorted(num4, reverse=True))
 print(num4)
 
