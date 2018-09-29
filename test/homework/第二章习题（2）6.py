@@ -12,7 +12,6 @@ isupperNum = 0
 islowerNum = 0
 isdigitNum = 0
 for n in num:
-
     if n.isupper():
         isupperNum += 1
     elif n.islower():

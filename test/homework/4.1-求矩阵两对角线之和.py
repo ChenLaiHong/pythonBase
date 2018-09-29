@@ -16,3 +16,5 @@ for o in range(4):
         if o + s == 3 or o == s:
             sum += temp[o][s]
 print(int(sum))
+
+
