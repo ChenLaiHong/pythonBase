@@ -19,8 +19,9 @@
 i = 0
 num = []
 while i < 10:
-    num.append(int(input()))
+    num.append(input())
+    num[i] = int(num[i])
     i += 1
-temp = sorted(num, reverse=True)
-for n in temp:
+num.sort(reverse=True)
+for n in num:
     print(n, end=" ")
