@@ -6,23 +6,49 @@
 【样例输出】1221 2332 2
 【样例说明】为测试程序健壮性，输入数中可能包括3位数、5位数等
 """
+# def find(number):
+#     temp = 0
+#     if len(number) == 1:
+#         return number
+#     else:
+#         for n in range(len(number)//2):
+#             if int(number[n]) == int(number[len(number)-1-n]):
+#                 temp += 1
+#                 continue
+#         if temp == len(number)//2:
+#             return number
+#     return ""
+# numInput = input().split()
+# result = []
+# number = 0
+# for n in numInput:
+#     if find(n).__len__() > 0:
+#         number += 1
+#         print(find(n), end=" ")
+# print(number)
+# #################方法二
 def find(number):
-    temp = 0
-    if len(number) == 1:
-        return number
+    if len(number) % 2 == 0:
+        num = number[len(number) // 2: len(number)]
+        if num[:: -1] == number[0:len(number) // 2]:
+            return 1
+        else:
+            return 0
     else:
-        for n in range(len(number)//2):
-            if int(number[n]) == int(number[len(number)-1-n]):
-                temp += 1
-                continue
-        if temp == len(number)//2:
-            return number
-    return ""
+        num = number[(len(number) // 2)+1: len(number)]
+        if num[:: -1] == number[0:len(number) // 2]:
+            return 1
+        else:
+            return 0
+    return 0
+
 numInput = input().split()
 result = []
 number = 0
 for n in numInput:
-    if find(n).__len__() > 0:
+    if find(n) == 1:
         number += 1
-        print(find(n), end=" ")
+        print(n, end=" ")
+    else:
+        continue
 print(number)
