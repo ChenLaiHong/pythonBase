@@ -18,18 +18,29 @@
 样例说明
 　　把80元分成30元和50元，分别买3瓶和5瓶，其中3瓶送1瓶，5瓶送2瓶，共得到11瓶。
 """
+
 money = int(input())
 result = 0
-while money >= 10:
-    if money >= 50:
-        result += (money // 50)*7
-        money -= 50*(money // 50)
-        continue
-    elif money >= 30:
-        result += (money // 30)*4
-        money -= 30*(money // 30)
-        continue
-    elif money >= 10:
-        result += (money // 10)
-        money -= 10*(money // 10)
+moneyList = [50, 30, 10]
+numList = [7, 4, 1]
+n = 0
+while n < 3 and money >= 10:
+    if money >= moneyList[n]:
+        result += (money // moneyList[n])*numList[n]
+        money -= (money // moneyList[n])*moneyList[n]
+    n += 1
+
+# ------------第一的有点臃肿了代码，上面是优化了的----------
+# while money >= 10:
+#     if money >= 50:
+#         result += (money // 50)*7
+#         money -= 50*(money // 50)
+#         continue
+#     elif money >= 30:
+#         result += (money // 30)*4
+#         money -= 30*(money // 30)
+#         continue
+#     elif money >= 10:
+#         result += (money // 10)
+#         money -= 10*(money // 10)
 print(result)
