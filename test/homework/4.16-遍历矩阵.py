@@ -18,3 +18,6 @@ result = []
 for j in range(3):
     numList = input().split()
     result.append(numList)
+for i in range(3):
+    for j in range(3):
+        print(result[j][i], end=" ")
