@@ -29,18 +29,23 @@ number = input().split()
 for n in range(number.__len__()):
     number[n] = int(number[n])
 
+# 寻找列表中最小的值
 def findMin(numberList):
     temp = sorted(numberList)
     return temp[0]
-numberTemp = number.copy()
-for t in range(number.__len__()-1):
-    # temp = findMin(numberTemp)
-    temp = number.index(findMin(numberTemp))
-    # 这样交换不成功
-    # number[t], number[number.index(temp)] = number[number.index(temp)], number[t]
-    number[t], number[temp] = number[temp], number[t]
 
+# 设置两个相同的列表，前面为协助列表
+numberTemp = number.copy()
+# 循环最原始列表
+for t in range(number.__len__()-1):
+    # 从协助列表中找到最小值，后再在原始列表中找到对应值的索引，赋值给临时变量
+    temp = number.index(findMin(numberTemp))
+    # 在原始列表中进行交换，把最小值与前面前面交换，第一次时将最小值1交换到原始列表下标为0的位置
+    number[t], number[temp] = number[temp], number[t]
+    # 交换完一次后将原始列表输出，输出的结果是已经进行过交换的结果
     for n in range(number.__len__()):
         print(number[n], end=" ")
     print()
+    # 修改协助列表，因为原始列表已经进行交换了一次，那么协助列表就不能跟原始列表相同了，
+    # 如果相同那么最小值就一直不变了，所以协助列表取原始列表去掉第一个之后的列表，再继续....
     numberTemp = number[t+1: number.__len__()]

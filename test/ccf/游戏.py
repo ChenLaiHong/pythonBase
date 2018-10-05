@@ -39,7 +39,6 @@ for i in range(1, int(n)+1):
 
 num = 0
 while babyList.__len__() != 1:
-
     for i in range(num, babyList.__len__()):
         temp += 1
         tempStr = str(temp)
