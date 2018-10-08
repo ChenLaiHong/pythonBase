@@ -20,3 +20,31 @@
 样例输出
 7 9 9
 """
+n, L, t = input().split()
+n, L, t = int(n), int(L), int(t)
+# 输入初始位置在列表里,但是这里数据全是str型的
+initialPosition = input().split()
+# 方向，1为向右，-1为向左，开始默认全是1
+direction = []
+for i in range(initialPosition.__len__()):
+    # 将初始位置信息转换成int型
+    initialPosition[i] = int(initialPosition[i])
+    # 将方向赋值为默认向右
+    direction.append(1)
+def updateDirection(initialPosition1, direction, L):
+    for i in range(initialPosition.__len__()):
+        if initialPosition1.count(initialPosition1[i]) == 2:
+            direction[i] = -1*direction[i]
+        if initialPosition1[i] == L:
+            direction[i] = -1*direction[i]
+        if initialPosition1[i] == 0:
+            direction[i] = -1*direction[i]
+    return direction
+
+while t > 0:
+    t -= 1
+    for i in range(n):
+        initialPosition[i] = initialPosition[i] + direction[i]
+    direction = updateDirection(initialPosition, direction, L)
+for i in initialPosition:
+    print(i, end=" ")
