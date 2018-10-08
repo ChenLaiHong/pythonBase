@@ -18,18 +18,18 @@
 　　对于所有评测用例，输入的数字不超过30个，保证0正好出现一次且为最后一个数字。
 """
 numList = input().split()
+# 把输入的内容转换成整数型
 for n in range(numList.__len__()):
     numList[n] = int(numList[n])
-
+# 用来计算总和
 result = 0
+# 用来标记上一次是否是1或者是否是第一次进入
 linshi = 0
-temp = True
 for n in numList:
     if n == 2:
-        if linshi == 0 or temp:
+        if linshi == 0:
             result += 2
             linshi += 2
-            temp = False
         else:
             result += linshi+2
             linshi += 2
@@ -37,6 +37,4 @@ for n in numList:
         if n == 1:
             linshi = 0
             result += 1
-        else:
-            break
 print(result)

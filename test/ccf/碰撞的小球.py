@@ -20,31 +20,49 @@
 样例输出
 7 9 9
 """
+# 接收输入的值,各个值都是str型的
 n, L, t = input().split()
+# 将str型转换成int型
 n, L, t = int(n), int(L), int(t)
 # 输入初始位置在列表里,但是这里数据全是str型的
 initialPosition = input().split()
-# 方向，1为向右，-1为向左，开始默认全是1
+# 方向列表，1为向右，-1为向左，开始默认全是1
 direction = []
+# 将初始位置的值全部转换成int型，同时给方向列表对应每个位置赋值
 for i in range(initialPosition.__len__()):
     # 将初始位置信息转换成int型
     initialPosition[i] = int(initialPosition[i])
-    # 将方向赋值为默认向右
+    # 将方向赋值为向右，初始方向都是向右
     direction.append(1)
+
+# 此方法用于更新方向
 def updateDirection(initialPosition1, direction, L):
+    # 循环判断小球的位置是否可以进行更换方向了
     for i in range(initialPosition.__len__()):
+        # 如果存在某个位置的值有两个，那么就说明有两个球进行碰撞了
         if initialPosition1.count(initialPosition1[i]) == 2:
+            # 那么当前这个球的方向就要取反方向了
             direction[i] = -1*direction[i]
+        # 如果某一个球的位置已经在右端点了
         if initialPosition1[i] == L:
+            # 那么当前这个球的方向就要取反方向了
             direction[i] = -1*direction[i]
+        # 如果某一个球的位置已经在左端点了
         if initialPosition1[i] == 0:
+            # 那么当前这个球的方向就要取反方向了
             direction[i] = -1*direction[i]
+    # 把修改方向后的方向列表返回
     return direction
 
+# 这t秒内的所有操作，位置信息的改变，方向信息的改变
 while t > 0:
     t -= 1
     for i in range(n):
+        # 移动后的位置改变
         initialPosition[i] = initialPosition[i] + direction[i]
+    # 小球的方向更新
     direction = updateDirection(initialPosition, direction, L)
+
+# 输出经过t秒后各个小球的位置
 for i in initialPosition:
     print(i, end=" ")
