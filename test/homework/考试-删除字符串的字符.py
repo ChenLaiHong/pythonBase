@@ -6,19 +6,9 @@
 【样例输出】absag
 【样例说明】要去除指定字符的全部出现。
 """
-s = input().split()
-temp = s[0]
-tempResult = []
-count = temp.count(s[1])
-for i in temp:
-    tempResult.append(i)
-while count > 0:
-    for i in tempResult:
-        if i == s[1]:
-            tempResult.remove(i)
-            count -= 1
-            break
+s, c = input().split()
 result = ""
-for i in tempResult:
-    result += i
+for i in s:
+    if i != c:
+        result += i
 print(result)
