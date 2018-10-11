@@ -32,33 +32,56 @@ INT_MAX (231 − 1) 或 INT_MIN (−231) 。
 解释: 数字 "-91283472332" 超过 32 位有符号整数范围。 
      因此返回 INT_MIN (−231) 。
 """
+# 将输入的内容进行去空格
 num = input().strip()
+# 暂时存储某一段只包含一个正负号或者数字的值
 temp = ""
+# 记录正负号的个数
 count = 0
+# 标记是否已经执行过数字了
 flag = False
+# 循环取出里面的字符来判断
 for i in range(num.__len__()):
+    # 如果当前字符不是正号也不是负号也不是数字时则退出循环
     if num[i] != "-" and num[i] != "+" and not num[i].isdigit():
         break
+    # 否则继续判断
     else:
+        # 如果当前字符是正号或者负号时
         if num[i] == "-" or num[i] == "+":
+            # 那就记录好已经有正号或负号了
             count += 1
+            # 如果正号或者负号的数目已经超过一个并且还没记录过数字则退出循环
             if count > 1 or flag:
                 break
+            # 否则把当前字符叠加到暂存值里面
             else:
                 temp += num[i]
+        # 如果当前字符是数字则把当前字符叠加到暂存值里面
         elif num[i].isdigit():
             temp += num[i]
+            # 并且记录好我暂存值已经有数字了
             flag = True
+print(temp)
+# 循环完之后得到的结果就是，最多包含一个正号或者负号并且他们在最前面，其他字符是数字，或者是空字符，或者全是数字
 
+# 定义一个变量来存储最后的整数结果
 result = 0
+# 如果上面循环完得到的结果不是空字符时
 if temp != "":
-    if temp.find("+") == 0 or temp.find("-") == 0:
+    # 再判断正号或者负号是否在temp里面
+    if "+" in temp or "-" in temp:
+        # 如果正号或负号是在最前面再判断长度是否大于1，保证内容不是一个正号或负号
         if temp.__len__() > 1:
+            # 如果条件都是真则证明此值可以转换成int
             result = int(temp)
+    # 剩下的只包含数字可以进行转换成int
     else:
         result = int(temp)
+# 转换成整数的时候再来判断是否小于最小值
 if result < -2**31:
     result = -2**31
+# 判断是否大于最大值
 if result > 2**31-1:
     result = 2**31-1
 print(result)
