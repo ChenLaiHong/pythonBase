@@ -34,6 +34,6 @@ def removeElement(nums, val):
             if n == val:
                 nums.remove(n)
     return nums.__len__()
-nums = [3,2,2,3]
+nums = [3, 2, 2, 3]
 val = 3
 print(removeElement(nums, val))
