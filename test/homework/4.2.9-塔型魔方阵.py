@@ -26,3 +26,21 @@ N=4时：
 11111
 【样例说明】输入自然数3，则输出边长为5的方阵，3在方阵的中间出现一次，其余位置上的数字从外向中心逐渐增大。
 """
+N = int(input())
+temp = []
+result = []
+for i in range(2*N-1):
+    for j in range(2*N-1):
+        temp.append(0)
+    result.append(temp)
+    temp = []
+flag = 1
+for i in range(N):
+    for j in range(i, N*2-(i+1)):
+        result[j][i] = result[i][j] = result[j][2*N-2-i] = result[2*N-2-i][j] = flag
+    flag += 1
+
+for i in result:
+    for j in i:
+        print(j, end="")
+    print()
