@@ -29,17 +29,22 @@ N=4时：
 N = int(input())
 temp = []
 result = []
+# 生成矩阵，里面的值默认全部是0
 for i in range(2*N-1):
     for j in range(2*N-1):
         temp.append(0)
     result.append(temp)
     temp = []
+
+# 不断变化的值，用于赋值给矩阵里面的
 flag = 1
+# 修改矩阵里面的值
 for i in range(N):
     for j in range(i, N*2-(i+1)):
         result[j][i] = result[i][j] = result[j][2*N-2-i] = result[2*N-2-i][j] = flag
     flag += 1
 
+# 输出最后的矩阵结果
 for i in result:
     for j in i:
         print(j, end="")
