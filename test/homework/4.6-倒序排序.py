@@ -22,6 +22,6 @@ while i < 10:
     num.append(input())
     num[i] = int(num[i])
     i += 1
-num.sort(reverse=True)
+num = num[::-1]
 for n in num:
     print(n, end=" ")
