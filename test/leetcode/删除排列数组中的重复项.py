@@ -26,40 +26,20 @@ def removeDuplicates(nums):
     :type nums: List[int]
     :rtype: int
     """
-    i = 0
-    if nums.__len__() == 0:
+    num = 0
+    j = 1
+    if nums.__len__() > 0:
+        while j < nums.__len__():
+            if nums[num] == nums[j]:
+                nums.remove(nums[j])
+            else:
+                num = j
+                j += 1
+        return nums.__len__()
+    else:
         return 0
-    for j in range(1, nums.__len__()):
-        if nums[j] != nums[i]:
-            nums[i+1] = nums[j]
-            i += 1
-    return i + 1
-    # num = 0
-    # if nums.__len__() > 0:
-    #     number = set(nums).__len__()
-    #     while True:
-    #         if nums.count(nums[num]) > 1:
-    #             nums.remove(nums[num])
-    #         else:
-    #             num += 1
-    #         if number == nums.__len__():
-    #             break
-    #     return nums.__len__()
-    # else:
-    #     return 0
 
-    # if nums.__len__() > 0:
-    #     number = set(nums).__len__()
-    #     while num < number:
-    #         flag = num
-    #         if nums.count(nums[flag]) > 1:
-    #             nums.remove(nums[flag])
-    #         else:
-    #             num += 1
-    #     return nums.__len__()
-    # else:
-    #     return 0
 
-nums = [0,0,1,1,1,2,2,3,3,4]
+nums = [1,1,1,1,1,1]
 print(removeDuplicates(nums))
 print(nums)
