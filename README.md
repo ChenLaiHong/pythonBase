@@ -1,5 +1,4 @@
-# 数据挖掘中的图
-
+# 数据挖掘中的图（test/drawing）
 * 条形图1
 ![image](https://github.com/ChenLaiHong/python/blob/master/test/images/tiaoxingtu.png)
 * 条形图2
