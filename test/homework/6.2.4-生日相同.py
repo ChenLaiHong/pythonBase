@@ -29,7 +29,6 @@ def sortDate(strTime):
     result = []
     for i in temp:
         mouth = datetime.datetime.strftime(i, "%m")
-        print(mouth)
         day = datetime.datetime.strftime(i, "%d")
         if mouth[0] == '0':
             mouth = mouth[1]
@@ -61,7 +60,6 @@ for i in strTimeList:
 
 if strTimeSet.__len__() > 0:
     finalTime = sortDate(list(strTimeSet))
-    print(finalTime)
     for i in finalTime:
         for j in result.items():
             if j[1] == i:
