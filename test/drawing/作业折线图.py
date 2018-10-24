@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 
@@ -22,11 +21,13 @@ petal_width = []
 x = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
 
 for i in iris_setosa:
-    plt.plot(x,i,label = 'versicolor', c="g")
+    plt.plot(i, c="g",ls= '--', alpha=0.3)
+
 for i in iris_versicolor:
-    plt.plot(x,i,label = 'versicolor', c="r")
+    plt.plot(i, c="r",ls='-.', alpha=0.3)
+
 for i in iris_virginica:
-    plt.plot(x,i,label = 'versicolor', c="b")
+    plt.plot(x, i, c="b",ls='-', alpha=0.3)
+
 plt.xlabel('value')
-plt.ylabel('y_data')
 plt.show()
