@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 
-iris = load_iris()  # 加载机器学习的下的iris数据集，先来认识一下iris数据集的一些操作，其实iris数据集就是一个字典集。下面注释的操作，可以帮助理解
-
+iris = load_iris()  # 加载机器学习的下的iris数据集
 iris_setosa = iris.data[:50]  # 第一种花的数据
 iris_versicolor = iris.data[50:100]  # 第二种花的数据
 iris_virginica = iris.data[100:150]  # 第三种花的数据
@@ -44,7 +43,4 @@ for i in range(0, 4):
             plt.scatter(iris_virginica[j], iris_virginica[i], c='r', s=30, alpha=0.5)
             plt.xticks(ticks[j])
             plt.yticks(ticks[i])
-
 plt.show()
-
-# plt.savefig('iris.png', format='png')   #保存图片
