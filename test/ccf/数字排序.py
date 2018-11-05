@@ -21,6 +21,7 @@
 """
 n = int(input())
 nums = input().split()
+nums = [int(n) for n in nums]
 temp = set(nums)
 result = {}
 for i in sorted(temp):
