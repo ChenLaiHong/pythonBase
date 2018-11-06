@@ -26,8 +26,8 @@ def numSord(result):
         return x[1]
     def getNum(x):
         return x[0]
-    linshi = sorted(result, key=getKey)
-    for i in sorted(linshi, key=getNum):
+    linshi = sorted(result, key=getNum)
+    for i in sorted(linshi, key=getKey):
         print(i[0], end=" ")
 
 N = int(input())
