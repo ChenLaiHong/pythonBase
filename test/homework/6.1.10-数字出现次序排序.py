@@ -34,10 +34,8 @@ for k in sorted(result.keys()):
 # 转换成列表，键值对变成元组
 temp = r.items()
 
-
 def getKey(x):
     return x[1]
-
 
 # 根据元组的第二个值排序，倒序
 finallyResult = sorted(temp, key=getKey, reverse=True)
