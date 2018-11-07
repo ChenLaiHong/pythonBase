@@ -71,24 +71,26 @@ name = "H A N G M A N"
 words = "当前空缺："
 words2 = "没猜中的字母："
 flag = 0
-
+error_input = 0
 temp = ""
+n = 0
 while True:
-    hang = random.randint(0, 5)
-    suiji = gussType[hang][random.randint(0, 9)]
-    print(suiji)
-    print("猜测单词的类别是：", gussType[hang][0])
-    print(name)
-    print(HANGMAN_LIST[flag])
-    print(words)
-    kongque = suiji.__len__()*"_"
-    print(kongque)
-
-    n = 0
+    if error_input != 1:
+        hang = random.randint(0, 5)
+        suiji = gussType[hang][random.randint(0, 9)]
+        print(suiji)
+        print("猜测单词的类别是：", gussType[hang][0])
+        print(name)
+        print(HANGMAN_LIST[flag])
+        print(words)
+        kongque = suiji.__len__()*"_"
+        print(kongque)
+        n = 0
     while n < len(suiji):
         word = input()
         print("你猜的下一个字母是：", word)
         if len(word) == 1 and word.isalpha():
+            error_input = 0
             if word in suiji:
                 n += 1
                 kongque = change(suiji, kongque, word)
@@ -116,16 +118,19 @@ while True:
                     print(kongque)
                     print(words2, temp)
         else:
-            print("输入不合法，请重新输入：")
+            error_input = 1
+            print("只能输入1个字母，请重新输入：")
             break
     if flag == 6:
         break
-    print("你要继续玩吗？（回答yes或者no）")
-    answer = input()
-    if answer == "no":
-        break
-    else:
-        flag = 0
+    if error_input != 1:
+        print("你要继续玩吗？（回答yes或者no）")
+        answer = input()
+        if answer == "no":
+            break
+        else:
+            flag = 0
+
 
 
 
