@@ -47,11 +47,15 @@ HANGMAN_LIST = [
  o   |
 /|\  |
 / \  |
-   ===
+    ===
 '''
                 ]
-animal = ["dog", "cat", "horse", "koala", "dolphin", "lion", "monkey", "cow", "wolf", "kangaroo"]
-
+gussType = [["动物", "dog", "cat", "horse", "koala", "dolphin", "lion", "monkey", "cow", "wolf", "kangaroo"],
+            ["水果", "apple", "sydney", "peach", "banana", "watermelon", "grape", "orange", "strawberry", "blueberry", "cherry"],
+            ["颜色","red", "blue", "yellow", "purple", "orange", "pink", "gray", "black", "white", "brown"],
+            ["交通工具", "bicycles", "trains", "buses", "cars", "subways", "planes", "cruises", "boats", "rockets", "spaceships"],
+            ["家具", "TV", "fans", "refrigerators", "sofas", "tables", "stools", "cupboards", "beds", "bookshelves", "bathtubs"],
+            ["学习用品", "pencils", "pens", "erasers", "rulers", "adhesive", "tapes", "dictionaries", "computers", "notebooks", "schoolbags"]]
 
 # 填充猜中的字母
 def change(suiji, kongque, word):
@@ -70,8 +74,10 @@ flag = 0
 
 temp = ""
 while True:
-    suiji = animal[random.randint(0, animal.__len__()-1)]
+    hang = random.randint(0, 5)
+    suiji = gussType[hang][random.randint(0, 9)]
     print(suiji)
+    print("猜测单词的类别是：", gussType[hang][0])
     print(name)
     print(HANGMAN_LIST[flag])
     print(words)
@@ -84,11 +90,17 @@ while True:
         print("你猜的下一个字母是：", word)
         if len(word) == 1 and word.isalpha():
             if word in suiji:
-                print(HANGMAN_LIST[flag])
-                kongque = change(suiji, kongque, word)
-                print(kongque)
-                print(words2, temp)
                 n += 1
+                kongque = change(suiji, kongque, word)
+                if kongque == suiji:
+                    print("你猜对了！被猜的单词是：")
+                    print(suiji)
+                    print("棒棒哒！")
+                    break
+                else:
+                    print(HANGMAN_LIST[flag])
+                    print(kongque)
+                    print(words2, temp)
             else:
                 flag += 1
                 if flag == 6:
