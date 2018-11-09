@@ -52,7 +52,7 @@ HANGMAN_LIST = [
                 ]
 gussType = [["动物", "dog", "cat", "horse", "koala", "dolphin", "lion", "monkey", "cow", "wolf", "kangaroo"],
             ["水果", "apple", "sydney", "peach", "banana", "watermelon", "grape", "orange", "strawberry", "blueberry", "cherry"],
-            ["颜色","red", "blue", "yellow", "purple", "orange", "pink", "gray", "black", "white", "brown"],
+            ["颜色", "red", "blue", "yellow", "purple", "orange", "pink", "gray", "black", "white", "brown"],
             ["交通工具", "bicycles", "trains", "buses", "cars", "subways", "planes", "cruises", "boats", "rockets", "spaceships"],
             ["家具", "TV", "fans", "refrigerators", "sofas", "tables", "stools", "cupboards", "beds", "bookshelves", "bathtubs"],
             ["学习用品", "pencils", "pens", "erasers", "rulers", "adhesive", "tapes", "dictionaries", "computers", "notebooks", "schoolbags"]]
