@@ -41,14 +41,17 @@ def change(nums):
     temp1 = sorted(temp.copy())
     flag = 0
     weizhi = []
-    for i in range(len(temp)):
-        if temp[i] != temp1[i]:
-            weizhi.append(i)
-            flag += 1
-    if flag == 2:
-        temp[weizhi[0]], temp[weizhi[1]] = temp[weizhi[1]], temp[weizhi[0]]
-        if temp == sorted(temp):
-            return True
+    if len(set(temp)) == len(temp):
+        for i in range(len(temp)):
+            if temp[i] != temp1[i]:
+                weizhi.append(i)
+                flag += 1
+        if flag == 2:
+            temp[weizhi[1]], temp[weizhi[0]] = temp[weizhi[0]], temp[weizhi[1]]
+            if temp == sorted(temp):
+                return True
+            else:
+                return False
         else:
             return False
     else:
