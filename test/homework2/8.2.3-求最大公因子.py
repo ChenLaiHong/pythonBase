@@ -11,9 +11,9 @@ def gcd(x,y):
     if y <= x and x % y == 0:
         return y
     elif y > x:
-        return gcd(y,x)
+        return gcd(y, x)
     else:
-        return gcd(y, x%y)
+        return gcd(y, x % y)
 x, y = input().split()
 x, y = int(x), int(y)
 print(gcd(x, y))
