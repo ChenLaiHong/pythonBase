@@ -25,6 +25,7 @@ num = input()
 nums = [int(n) for n in input().split()]
 result = []
 for i in combinations(nums, 2):
+    print(i)
     result.append(abs(i[0]-i[1]))
 temp = sorted(result)
 print(temp.count(temp[0]),temp.count(temp[len(temp)-1]))

@@ -14,7 +14,7 @@
 
 m, n = input().split(":")
 minuteAngel = (float(n)*360)/60
-hourAngel = (float(m)%12)*30 + (float(n)*30)/60
+hourAngel = (float(m) % 12)*30 + (float(n)*30)/60
 
 angel = abs(hourAngel - minuteAngel)
 if angel > 180:
