@@ -43,7 +43,7 @@ while num > 0:
     result.append(temp)
     num -= 1
 
-find(result,big, small,sum_nums)
+find(result, big, small, sum_nums)
 for i in range(len(result)):
     for j in range(len(result[0])):
         print(str(result[i][j]).rjust(5), end="")
