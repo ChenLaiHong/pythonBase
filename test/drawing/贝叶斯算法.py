@@ -74,7 +74,7 @@ train_samples = [sample.split(' ') for sample in train_samples]
 for j in range(len(train_samples[0])):
         for k in range(len(train_samples)):
             train_samples[k][j] = MAP[j][train_samples[k][j]]
-print(train_samples)
+# print(train_samples)
 
 # 训练样本数量
 n_sample = len(train_samples)
