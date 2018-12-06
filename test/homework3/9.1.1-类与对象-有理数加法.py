@@ -10,6 +10,7 @@
 【样例输出】
 1/2
 """
+from fractions import Fraction
 class Shu:
     def __init__(self, num1, num2):
         self.num1 = num1
@@ -17,5 +18,9 @@ class Shu:
 
     def he(self, num1, num2):
         return num1 + num2
-jisuan = Shu(1/3, 1/6)
-print(jisuan.he(jisuan.num1, jisuan.num2))
+
+num1, num2 = input().split()
+num1 = Fraction(num1)
+num2 = Fraction(num2)
+jisuan = Shu(num1, num2)
+print(str(Fraction(jisuan.he(jisuan.num1, jisuan.num2))))
