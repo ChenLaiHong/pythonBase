@@ -23,7 +23,7 @@ def avg(nums):
         he += float(i)
     return he / len(nums)
 
-def fang(nums, pingjun):
+def std(nums, pingjun):
     temp = 0
     for i in nums:
         temp += (float(i) - pingjun) ** 2
@@ -32,5 +32,5 @@ def fang(nums, pingjun):
 num = int(input())
 nums = input().split()
 pingjun = avg(nums)
-print("%0.3f" % (fang(nums, pingjun)))
+print("%0.3f" % (std(nums, pingjun)))
 
