@@ -104,6 +104,7 @@ def turnover(data):
     return sorted(eff_dict.items(),key=lambda n:n[1], reverse=True)
 # 读取csv文件的内容
 csv_data = csv.reader(open('player_regular_season.csv', 'r'))
+
 # 调用处理文件的函数
 data = handle(csv_data)
 # 调用计算效率的函数
