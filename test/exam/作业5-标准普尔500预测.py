@@ -38,11 +38,23 @@ result_dict = jijie(lines)
 result_chazhi = find(result_dict)
 # 排序后的结果，从小到大
 result_pai = sorted(result_chazhi.items(), key=lambda n: n[1])
-result = result_pai[-1]
+
+# 差值最大的
+# result = result_pai[-1]
+# temp = result_dict[result[0]]
+# temp_start = temp[0]
+# temp_end = temp[-1]
+# start, end = temp_start.split(","), temp_end.split(",")
+# print("该季节起始日期：", start[0])
+# print("该季节结束日期：", end[0])
+# print("最大差值：", result[1])
+
+# 差值最小的
+result = result_pai[0]
 temp = result_dict[result[0]]
 temp_start = temp[0]
 temp_end = temp[-1]
 start, end = temp_start.split(","), temp_end.split(",")
 print("该季节起始日期：", start[0])
 print("该季节结束日期：", end[0])
-print("最大差值：", result[1])
+print("最小差值：", result[1])
