@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 def createC1(dataSet):
     C1 = []
     for transaction in dataSet:
@@ -10,7 +9,6 @@ def createC1(dataSet):
                 C1.append([item])
     C1.sort()
     return list(map(frozenset, C1))
-
 
 def scanD(D, Ck, minSupport):
     # 参数：数据集、候选项集列表 Ck以及感兴趣项集的最小支持度 minSupport
