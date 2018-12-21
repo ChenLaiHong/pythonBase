@@ -50,13 +50,13 @@ lines = datas.readlines()
 lines = lines[1:]
 # 将数据按每13条一个季节
 result_dict = jijie(lines)
-
+print(result_dict,"******************************")
 # 第1、2问
-# result_chazhi = find(result_dict)
-# # 排序后的结果，从小到大
-# result_pai = sorted(result_chazhi.items(), key=lambda n: n[1])
+result_chazhi = find(result_dict)
+# 排序后的结果，从小到大
+result_pai = sorted(result_chazhi.items(), key=lambda n: n[1])
 
-# # 差值最大的
+# 差值最大的
 # result = result_pai[-1]
 # temp = result_dict[result[0]]
 # temp_start = temp[0]
@@ -98,3 +98,31 @@ while n < 10:
     # print("变化值：", result_jueduizhi[len(result_jueduizhi)-n-1][1])
     print("----------------------------")
     n += 1
+
+
+import matplotlib.pyplot as plt
+
+# 计算前3个季节的Adj Close的值的散点图
+tu_list = []
+y_list = []
+flag = 1
+while flag < 4:
+    temp_list = []
+    for i in result_dict[flag]:
+        one_list = i.split(",")
+        y_list.append(float(one_list[6]))
+        temp_list.append(float(one_list[6]))
+    tu_list.append(temp_list)
+    flag += 1
+
+sorted(y_list)
+# 设置y轴的值的范围，下面包含13个数据，最大最小都包含在里面
+final_y = y_list[0:7] + y_list[len(y_list)-7: len(y_list)-1]
+
+# 为了能显示中文
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.scatter(tu_list[0], final_y, c="red", marker='o', label='第一季节')
+plt.scatter(tu_list[1], final_y, c="green", marker='*', label='第二季节')
+plt.scatter(tu_list[2], final_y, c="blue", marker='+', label='第三季节')
+plt.legend(loc=2)
+plt.show()
