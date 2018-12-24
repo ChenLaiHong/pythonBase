@@ -20,3 +20,9 @@ elif 60 <= score < 80:
     print("及格")
 else:
     print("不及格")
+
+
+# 三元运算
+a =1
+b = 2
+c = a if a > 1 else b #如果a大于1的话，c=a，否则c=b
