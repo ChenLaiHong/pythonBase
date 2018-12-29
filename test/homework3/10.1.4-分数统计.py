@@ -16,14 +16,12 @@
 【样例说明】
 输出的70是平均分。
 """
-r = open("grade.txt", "r",encoding="utf-8")
+r = open("grade.txt")
 f1 = open("result.txt", "w")
 # 读写操作
 content = r.readlines()
 temp = []
 for i in content:
-    if "\ufeff" in i:
-        i = i[1:]
     temp.append(i.strip())
 # 关闭文件
 r.close()
