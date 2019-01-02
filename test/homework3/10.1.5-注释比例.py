@@ -26,16 +26,16 @@ fclose(in);
 【样例说明】
 filein.c文件的总字符数为179，注释中的字符数为41，则注释所占百分比为22%。
 """
-worlds = 0
+import re
+pattern = "/\*(.*?)\*/"
 length = 0
+worlds = 0
 with open("filein.c") as datas:
     datalist = datas.read()
-    length = datalist.__len__()
-    for i in range(len(datalist)):
-        if datalist[i] == "/" and datalist[i+1] == "*":
-            j = i + 1
-            while datalist[j] != "/":
-                worlds += 1
-                j += 1
-rate = worlds/length
+    worlds = len(datalist)
+    results = re.findall(pattern, datalist, re.DOTALL)
+    for i in results:
+        length += len(i)
+
+rate = length/worlds
 print(str(int(rate * 100))+"%")
