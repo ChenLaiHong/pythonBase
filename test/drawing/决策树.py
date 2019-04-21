@@ -19,6 +19,7 @@ test_data = np.concatenate((iris.data[40:50, :], iris.data[90:100, :], iris.data
 # 测试集样本类别
 test_target = np.concatenate((iris.target[40:50], iris.target[90:100], iris.target[140:150]), axis=0)
 
+print("训练集", train_target)
 # 训练
 clf = DecisionTreeClassifier()
 # 注意均使用训练数据集和样本类标
@@ -30,7 +31,7 @@ predict_target = clf.predict(test_data)
 print(predict_target)
 
 # 预测结果与真实结果比对
-print(sum(predict_target == test_target))
+print(sum(predict_target == test_target),"==========================")
 
 print(metrics.classification_report(test_target, predict_target))
 print(metrics.confusion_matrix(test_target, predict_target))
@@ -43,7 +44,7 @@ L2 = [n[1] for n in X]
 print(L2)
 
 # 绘图
-plt.scatter(L1, L2, c=predict_target, marker='x')  # cmap=plt.cm.Paired
-plt.rcParams['font.sans-serif'] = ['SimHei']
-plt.title("决策树算法")
-plt.show()
+# plt.scatter(L1, L2, c=predict_target, marker='x')  # cmap=plt.cm.Paired
+# plt.rcParams['font.sans-serif'] = ['SimHei']
+# plt.title("决策树算法")
+# plt.show()
