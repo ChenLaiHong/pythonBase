@@ -27,9 +27,9 @@ r = pd.concat([data, pd.Series(model.labels_, index = data.index)], axis = 1)  #
 r.columns = list(data.columns) + [u'聚类类别'] #重命名表头
 r.to_excel(outputfile) #保存结果
 
-
+import matplotlib.pyplot as plt
 def density_plot(data): #自定义作图函数
-  import matplotlib.pyplot as plt
+
   plt.rcParams['font.sans-serif'] = ['SimHei'] #用来正常显示中文标签
   plt.rcParams['axes.unicode_minus'] = False #用来正常显示负号
   p = data.plot(kind='kde', linewidth = 2, subplots = True, sharex = False)
