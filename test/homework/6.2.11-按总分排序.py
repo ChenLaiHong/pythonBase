@@ -29,6 +29,7 @@ while N > 0:
     N -= 1
 
 result = list(informatin.items())
+print(result)
 result = sorted(result, key=lambda num: num[0])
 result = sorted(result, key=lambda num: num[1], reverse=True)
 

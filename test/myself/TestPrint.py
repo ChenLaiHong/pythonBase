@@ -24,4 +24,4 @@ print("你好啊", file=f)
 print("不换行", end="")
 
 # 使用各个数据用分隔符进行分割
-print(1, 2, 3, sep="&")
+print([1, 2, 3], sep=",")

@@ -10,6 +10,7 @@ f = open("src.txt", "r", encoding="utf-8")
 
 # 读写操作
 content = f.read().lower()
+
 f.close()
 
 f1 = open("dest.txt", "w", encoding="utf-8")
